@@ -1,16 +1,125 @@
 /* ==========================================================================
-   AETHERA STUDIO - RESPONSIVE STYLESHEET
-   Supports: 1440px+, 1024px, 768px, 480px, 360px
+   AETHERA STUDIO - ULTIMATE COMPREHENSIVE RESPONSIVE STYLESHEET
+   Supports: 1440px+, 1280px, 1030px (Tablet Drawer), 768px, 480px, 360px
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. TABLETS & SMALL LAPTOPS (Max-width: 1024px)
+   1. GLOBAL REFLOW & OVERFLOW PROTECTION
    -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  section {
-    padding: 90px 0;
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+img, svg, canvas, video, input, select, textarea, button {
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. DESKTOPS & ULTRA-WIDE (Min-width: 1440px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. LAPTOPS (Max-width: 1280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .hero-title {
+    font-size: clamp(3rem, 7vw, 5.8rem);
   }
 
+  .work-grid {
+    gap: 40px 30px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. MID-SIZE TABLETS & COMPACT LAPTOPS (Max-width: 1030px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1030px) {
+  :root {
+    --header-height: 74px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  /* Trigger Mobile Drawer Navigation at <= 1030px */
+  .nav-links {
+    display: flex !important;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 36px 28px;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-light);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 9999 !important;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .nav-links.mobile-active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .mobile-cta-item {
+    display: block !important;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-strong);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+
+  .nav-actions .btn-outline {
+    display: none;
+  }
+
+  /* Hero Grid Tablet */
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -18,15 +127,7 @@
 
   .hero-art-box {
     aspect-ratio: 16/9;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .work-image-wrapper.portrait {
-    aspect-ratio: 16/11;
+    min-height: 260px;
   }
 
   .about-grid {
@@ -55,120 +156,123 @@
   }
 }
 
+/* Tablet Landscape Range (769px to 1030px) Work Grid */
+@media (min-width: 769px) and (max-width: 1030px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .work-image-wrapper.portrait {
+    aspect-ratio: 16/11;
+  }
+}
+
 /* --------------------------------------------------------------------------
-   2. PORTRAIT TABLETS & LARGE PHONES (Max-width: 768px)
+   5. PORTRAIT TABLETS & LARGE PHONES (Max-width: 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   :root {
-    --header-height: 76px;
+    --header-height: 68px;
   }
 
   section {
-    padding: 70px 0;
+    padding: 60px 0;
   }
 
   .container {
-    padding: 0 20px;
+    padding: 0 18px;
   }
 
-  /* Header & Mobile Menu Drawer */
-  .nav-links {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - var(--header-height));
-    background: var(--bg-primary);
+  /* Section Header Flex Stacking */
+  #work .container > div:first-child {
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 40px 24px;
-    gap: 24px;
-    border-bottom: 1px solid var(--border-light);
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s ease;
-    z-index: 9999 !important;
-    overflow-y: auto;
+    align-items: flex-start !important;
+    gap: 12px;
   }
 
-  .nav-links.mobile-active {
-    transform: translateY(0) !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    visibility: visible !important;
+  #work .container > div:first-child p {
+    text-align: left !important;
+    max-width: 100% !important;
   }
 
-  .nav-link {
-    font-size: 1.25rem;
-    font-family: var(--font-display);
-    font-weight: 700;
-    width: 100%;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-light);
+  /* Work Grid Single Column */
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
   }
 
-  .mobile-menu-btn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: var(--radius-sm);
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-strong);
-    font-size: 1.2rem;
-    color: var(--text-primary);
-    cursor: pointer;
+  .work-image-wrapper,
+  .work-image-wrapper.portrait {
+    aspect-ratio: 16/11;
   }
 
-  .nav-actions {
-    display: none;
+  .work-title {
+    font-size: 1.6rem;
   }
 
-  .mobile-cta-item {
-    display: block !important;
-    width: 100%;
-    margin-top: 16px;
-  }
-
-  /* Hero Adjustments */
+  /* Hero Mobile Adjustments */
   .hero {
-    padding-top: calc(var(--header-height) + 30px);
-    padding-bottom: 60px;
+    padding-top: calc(var(--header-height) + 20px);
+    padding-bottom: 50px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
 
   .hero-actions .btn {
     width: 100%;
+    box-sizing: border-box;
   }
 
-  /* Service List Mobile */
+  /* Service List Mobile Reflow */
+  .services-list {
+    margin-top: 30px;
+  }
+
   .service-header {
-    grid-template-columns: 50px 1fr 30px;
-    gap: 12px;
+    grid-template-columns: 40px 1fr 24px;
+    gap: 10px;
+  }
+
+  .service-name {
+    font-size: clamp(1.4rem, 4.5vw, 2.2rem);
   }
 
   .service-body {
     padding-left: 0;
   }
 
+  .service-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Single Column Stacking */
   .results-grid,
   .testimonials-grid,
   .stats-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   .process-card {
     grid-template-columns: 1fr;
-    padding: 24px;
+    padding: 24px 18px;
     gap: 12px;
   }
 
@@ -176,48 +280,92 @@
     grid-column: 1;
   }
 
+  .process-title {
+    font-size: 1.5rem;
+  }
+
+  .result-card {
+    padding: 36px 20px;
+  }
+
+  .result-val {
+    font-size: 3.4rem;
+  }
+
+  .testimonial-card {
+    padding: 28px 20px;
+  }
+
   .final-cta {
-    padding: 80px 0;
+    padding: 70px 0;
+  }
+
+  .cta-title {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+  }
+
+  .footer {
+    padding: 50px 0 30px 0;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 30px;
   }
 
   .footer-bottom {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     text-align: center;
   }
 }
 
 /* --------------------------------------------------------------------------
-   3. SMALL MOBILE PHONES (Max-width: 480px)
+   6. SMALL MOBILE PHONES (Max-width: 480px & 360px)
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
   .brand-mark {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
   }
 
   .stat-number {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
   }
 
   .result-val {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
 
   .btn {
-    padding: 14px 24px;
-    font-size: 0.9rem;
+    padding: 14px 22px;
+    font-size: 0.88rem;
+  }
+
+  .service-item {
+    padding: 24px 0;
+  }
+
+  /* Contact Modal Mobile Adjustments */
+  #contact-modal > div:nth-child(2) {
+    width: 95% !important;
+    padding: 24px 16px !important;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 }
