@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: aethera-studio
+    env: static
+    buildCommand: echo 'Aethera Studio build complete'
+    staticPublishPath: ./
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

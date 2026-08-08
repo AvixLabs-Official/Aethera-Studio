@@ -1,0 +1,10 @@
+{
+  "name": "aethera-studio",
+  "version": "1.0.0",
+  "description": "Aethera Studio - Luxury Editorial Digital Agency Website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Aethera Studio build complete'",
+    "start": "node server.js"
+  }
+}
