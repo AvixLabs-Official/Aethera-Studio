@@ -1,50 +1,50 @@
-# Aethera Studio — Creative Direction & Digital Agency Showcase
+# Aethera Studio
 
-![Aethera Studio](https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop)
+Creative agency website concept focused on modern branding, services, and portfolio presentation.
 
-**Aethera Studio** is a minimalist luxury creative agency website engineered to showcase architectural design, brand strategy, editorial case studies, and digital transformation services.
+## Live Demo
 
----
-
-## 🚀 Live Demo
-
-- **Public Live Application**: [https://starlit-nasturtium-9cfb9a.netlify.app/](https://starlit-nasturtium-9cfb9a.netlify.app/)
+- **[View Live Demo](https://starlit-nasturtium-9cfb9a.netlify.app/)**
 - **GitHub Repository**: [https://github.com/AvixLabs-Official/Aethera-Studio](https://github.com/AvixLabs-Official/Aethera-Studio)
 
----
+## Overview
 
-## ✨ Key Features
+Aethera Studio is a minimalist luxury creative agency website designed to present brand strategy, architectural design, case studies, and creative direction services.
 
-- **Editorial Case Study Showcase**: Filterable portfolio grid displaying brand identities, web experiences, and architectural concepts.
-- **Interactive Project Inquiry Modal**: Built-in lead capture drawer for client inquiries.
-- **Service Pillars & Strategy Timeline**: Detailed breakdown of Brand Strategy, UI/UX Engineering, and Content Art Direction.
-- **Refined Typography & Micro-Interactions**: Custom font hierarchy, smooth scroll transitions, and subtle hover effects.
+The design emphasizes editorial typography, generous whitespace, grid case studies, and an interactive inquiry drawer.
 
----
+> **Disclaimer**: This is a portfolio demonstration project and not a client project.
 
-## 🛠️ Tech Stack
+## Features
 
-- **Frontend**: HTML5, Vanilla CSS3, JavaScript (ES6+)
-- **Design System**: Space Grotesk & Inter typography, Dark Charcoal palette, Glassmorphism
-- **Server**: Node.js Static HTTP Server
+- Filterable editorial case study portfolio grid
+- Interactive project inquiry modal drawer
+- Service capabilities breakdown
+- Minimalist dark charcoal typography system
+- Responsive layout and smooth scroll transitions
 
----
+## Technologies
 
-## 💻 Local Installation & Setup
+- HTML5
+- CSS3 (Space Grotesk & Inter System)
+- JavaScript (ES6+)
+- Static Web Host (Netlify / Node)
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/AvixLabs-Official/Aethera-Studio.git
-   cd Aethera-Studio
-   ```
+## Screenshots
 
-2. **Run Local Server**:
-   ```bash
-   python -m http.server 8081
-   ```
+![Aethera Studio Interface](images/aethera_studio_preview.jpg)
 
----
+## Responsive Design
 
-## 📄 License
+Engineered and tested across viewports:
+- Desktop (1440px +)
+- Tablet (768px – 1024px)
+- Mobile (360px – 480px)
 
-Developed by **[Avix / AvixLabs](https://github.com/AvixLabs-Official)**. Released under the MIT License.
+## Project Type
+
+Portfolio Demonstration · Creative Agency
+
+## Disclaimer
+
+This project is a portfolio demonstration created to showcase frontend development, UI/UX, and interactive web-development capabilities. It is not presented as client work.
